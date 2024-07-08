@@ -142,8 +142,8 @@ body{
     flex-direction: column;
     align-items: center;
     position: absolute;
-    left: 58.7%;
-    top: 35%;
+    left: 177.7%;
+    top: 36%;
 }
 
 .hidden-p{
@@ -175,13 +175,13 @@ body{
 }
 
 @media (max-width: 1000px){
-    .body{
-        height: 100vh;
+    body{
+        flex-direction: column;
     }
 
     .first-child{
         background-image: url('images/bg-main-mobile.png');
-        background-size: 100% auto;
+        background-size: 100% 52vh;
         width: 100%;
         height: auto;
         text-align: center;
@@ -217,11 +217,21 @@ body{
     .main{
         position: static;
         text-align: left;
+        margin: 200px auto 30px;
+        padding: 15px;
+    }
+
+    #popup{
+        position: static;
         margin: 210px auto 40px;
     }
 }
 
 @media (max-width: 600px){
+    .first-child{
+        background-size: 100% 47vh;
+    }
+
     .cards-holder{
         max-width: 100%;
     }
@@ -244,8 +254,8 @@ body{
     }
 
     .logo{
-        width: 20%;
-        bottom: 64px;
+        width: 18%;
+        top: -52px;
     }
 
     .up{
@@ -258,6 +268,10 @@ body{
 }
 
 @media (max-width: 460px){
+    .first-child{
+        background-size: 100% 37vh;
+    }
+
     .logo{
         width: 16%;
         bottom: 54px;
@@ -278,6 +292,8 @@ body{
 
     .up{
         font-size: 14px;
+        position: absolute;
+        top: 25px;
     }
 
     .bottom{
@@ -296,13 +312,59 @@ body{
     }
 }
 
-@media (max-width: 400px){
+@media (max-width: 420px){
     .up-card{
         left: -70px;
     }
+}
 
+@media (max-width: 400px){
     .back-card {
         top: 40.7%;
         font-size: 13px;
+    }
+}
+
+@media (max-width: 360px){
+    .first-child{
+        background-size: 100% 28%;
+    }
+
+    .main{
+        width: 96%;
+        padding: 4px;
+    }
+
+    .p{
+        font-size: 13px;
+    }
+
+    .logo {
+        top: -42px;
+    }
+}
+
+@media (max-width: 320px){
+    .main{
+        width: 90%;
+        padding: 0;
+    }
+
+    .logo {
+        top: -32px;
+    }
+
+    .holder-front{
+        max-width: 232px;
+    }
+}
+
+@media (max-width: 300px){
+    .logo {
+        top: -26px;
+    }
+
+    .holder-front{
+        max-width: 232px;
     }
 }
