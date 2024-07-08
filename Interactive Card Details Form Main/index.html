@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="Card.css">
+  <title>Card Details</title>
+</head>
+<body>
+
+  <div class="first-child">
+    <div class="cards-holder">
+      <div class="up-card">
+        <img src="images/bg-card-front.png" alt="Card Front" class="front">
+        <div class="holder-front">
+          <img src="images/card-logo.svg" alt="Logo" class="logo">
+          <p class="card-information up" id="cardNumber">0000 0000 0000 0000</p>
+
+          <div class="bottom-holder">
+            <span class="card-information bottom" id="cardName">Jane Appleseed</span>
+            <div class="card-information bottom">
+              <span id="cardMonth">00</span><span>/</span><span id="cardYear">00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="holder-back">
+        <img src="images/bg-card-back.png" alt="Card Back" class="backcard">
+        <p class="back-card" id="cardCvc">000</p>
+      </div>
+    </div>
+
+
+    <main class="main" id="main">
+      <p class="p">Cardholder Name</p>
+      <div class="validation-parent">
+        <input type="text" placeholder="e.g. Jane Appleseed" class="input" id="name">
+        <p class="validation hidden false" id="emptyName">Name cannot be empty</p>
+      </div>
+
+
+      <p class="p">Card Number</p>
+      <div class="validation-parent">
+        <input placeholder="e.g. 1234 5678 9123 0000" class="input large" id="numbers"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+        maxlength = "20">
+        <p class="hidden false validation" id="cardEmpty">Card cannot be empty</p>
+      </div>
+      <div class="date-cvc">
+        <div class="date-holder validation-parent">
+          <p class="p">Exp. Date (MM/YY)</p>
+          <div>
+            <input type="number" placeholder="MM" class="input date prevent" id="month" max="12" min="0" onkeyup="if(value<0) value=0;if(value>12) value=12;">
+            <input type="number" placeholder="YY" class="input date prevent" id="year" max="2100" min="2024" onkeyup="if(value<0) value=2100;if(value>2100) value=2100;" onkeyup="if(value<2023) value=2023;if(value>2100) value=2100;">
+          </div>
+          <p class="hidden false validation" id="emptyDate">Can't be blank</p>
+        </div>
+              
+      <div class="validation-parent validation-cvc">
+        <p class="p">CVC</p>
+        <input type="number" placeholder="e.g. 123" class="input cvc prevent" id="cvc" maxlength="3" min="0" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+        <p class="hidden false validation" id="emptyCvc">Can't be blank</p>
+      </div>
+      </div>
+      <button class="button" id='confirm'>Confirm</button>
+    </main>    
+    <div class="hidden popup" id="popup">
+      <img src="images/icon-complete.svg" alt="Success">
+      <h1>Thank you!</h1>
+      <p class="hidden-p">We've added your card details</p>
+      <button class="button confirm" id="back">Continue</button>
+    </div>
+  </div>
+
+  <script src="Card.js"></script>  
+  <script src="cleave.min.js"></script>
+</body>
+</html>
